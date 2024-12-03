@@ -1,0 +1,5 @@
+Here is the result:
+Hello, this is first text file
+Hello, this is second
+----------
+What appears above this was before executing the code in app.js
