@@ -24,7 +24,8 @@ console.log(flattenedItems)
 
 //NOTE: dev dependencies are installed as follows: npm i name -D
 //We've installed nodemon to restart our application every time we save our file
-//We've also dadded custom commands to our package.json file so that when we type "node start" it works as if we wrote "nodemon app.js"
+//We've also dadded custom commands to our package.json file so that when we type "npm start" it works as if we wrote "nodemon app.js"
+//these custom commands can be named and will be run by the name we put them plus npm, like this: "npm" + "name"
 
 //NOTE: to uninstall you just simply type: npm uninstall name
 //you can also erase the entire package.json if you will so
