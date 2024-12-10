@@ -1,19 +1,25 @@
 const express = require('express')
+const { readFileSync } = require('fs')
+
 const app = express()
 
-const people = require('./routes/people')
-const auth = require('./routes/auth')
+const peopleRouter =require('./routes/people')
+const loginRouter =require('./routes/auth')
 
-// static assets
+//call the static page resources
 app.use(express.static('./methods-public'))
-// parse form data
-app.use(express.urlencoded({ extended: false }))
-// parse json
+//parser that will take the name from the request body
+app.use(express.urlencoded({extended:false}))
+//json parser
 app.use(express.json())
+//routers
+app.use('/api/people',peopleRouter)
+app.use('/login',loginRouter)
 
-app.use('/api/people', people)
-app.use('/login', auth)
+app.get('/',(req,res)=>{
+    res.send("")
+})
 
-app.listen(5000, () => {
-  console.log('Server is listening on port 5000....')
+app.listen(5000,()=>{
+    console.log("listening on port 5000")
 })
